@@ -11,7 +11,7 @@ apiServer:
     repository: ghcr.io/azure/kubernetes-carbon-intensity-exporter/server
     pullPolicy: IfNotPresent
     tag: "0.1.0"
-  dataFileLocation: azure-regions.json
+  dataFileLocation: gke-regions.json
   urls: http://0.0.0.0:7031;http://0.0.0.0:80;
 carbonDataExporter:
   name: carbon-data-exporter
