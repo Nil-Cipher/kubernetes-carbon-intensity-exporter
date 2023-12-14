@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 WORKDIR /app
 
 # Copy everything from source
-RUN git clone git@github.com:Nil-Cipher/carbon-aware-sdk.git && cd carbon-aware-sdk
+RUN git clone https://github.com/Nil-Cipher/carbon-aware-sdk.git && cd carbon-aware-sdk
 # Use implicit restore to build and publish
 RUN dotnet publish carbon-aware-sdk/src/CarbonAware.WebApi/src/CarbonAware.WebApi.csproj -c Release -o publish
 # Generate OpenAPI spec
@@ -15,4 +15,4 @@ RUN dotnet tool restore && \
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build-env /app/publish .
-ENTRYPOINT ["dotnet", "CarbonAware.WebApi.dll"]`
+ENTRYPOINT ["dotnet", "CarbonAware.WebApi.dll"]
