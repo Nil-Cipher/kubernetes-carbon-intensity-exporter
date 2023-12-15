@@ -8,9 +8,9 @@ namespace: kube-system
 apiServer:
   name: api-server
   image:
-    repository: ghcr.io/azure/kubernetes-carbon-intensity-exporter/server
+    repository: server
     pullPolicy: IfNotPresent
-    tag: "0.1.0"
+    tag: latest
   dataFileLocation: gke-regions.json
   urls: http://0.0.0.0:7031;http://0.0.0.0:80;
 carbonDataExporter:
