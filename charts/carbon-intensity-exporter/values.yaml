@@ -8,8 +8,8 @@ namespace: kube-system
 apiServer:
   name: api-server
   image:
-    repository: server
-    pullPolicy: Never
+    repository: docker.io/nilcipher/carbon-intensity-exporter-apiserver
+    pullPolicy: IfNotPresent
     tag: latest
   dataFileLocation: gke-regions.json
   urls: http://0.0.0.0:7031;http://0.0.0.0:80;
