@@ -9,7 +9,7 @@ apiServer:
   name: api-server
   image:
     repository: server
-    pullPolicy: IfNotPresent
+    pullPolicy: Never
     tag: latest
   dataFileLocation: gke-regions.json
   urls: http://0.0.0.0:7031;http://0.0.0.0:80;
